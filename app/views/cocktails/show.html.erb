@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+<div class="coitainer">
+  <h2><%= @cocktail.name %></h2>
+  <br>
+    <h5>Doses:</h5>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li> Ingredient: <%= dose.ingredient.name %> | Description: <%= dose.description %> | <%= link_to "Delete", dose_path(dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %></li>
+      <% end %>
+    </ul>
+  <p><%= link_to 'Back to list', cocktails_path %></p>
+  <p><%= link_to 'Create a new dose', new_cocktail_dose_path(@cocktail) %></p>
+</div>

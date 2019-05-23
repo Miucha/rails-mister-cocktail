@@ -1,0 +1,8 @@
+<div class="coitainer m-2">
+  <h2 class="text-center">Cocktails</h2>
+  <%= link_to 'Add a new cocktail', new_cocktail_path %>
+  <% @cocktails.each do |cocktail| %>
+    <p><%= cocktail.name %></p>
+    <p><%= link_to 'More info...', cocktail_path(cocktail) %></p>
+  <% end %>
+</div>
