@@ -1,8 +1,19 @@
-<div class="coitainer m-2">
-  <h2 class="text-center">Cocktails</h2>
-  <%= link_to 'Add a new cocktail', new_cocktail_path %>
-  <% @cocktails.each do |cocktail| %>
-    <p><%= cocktail.name %></p>
-    <p><%= link_to 'More info...', cocktail_path(cocktail) %></p>
-  <% end %>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://source.unsplash.com/featured/?{cocktail});">
+  <div class="container">
+    <h1>Cocktails</h1>
+  </div>
 </div>
+<div class="container m-1">
+  <h3 class="text-center"><%= link_to 'Add a new cocktail', new_cocktail_path %></h3>
+  <div class="row">
+      <% @cocktails.each do |cocktail| %>
+        <div class="card-category ol-lg-4" m-1 style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://source.unsplash.com/featured/?{<%= cocktail.name %>},{cocktail})">
+          <%= link_to cocktail.name, cocktail_path(cocktail) %>
+        </div>
+      <% end %>
+  </div>
+</div>
+
+
+
+
