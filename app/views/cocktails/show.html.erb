@@ -1,7 +1,10 @@
 <p id="notice"><%= notice %></p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= cl_image_path @cocktail.photo, height: 300, width: 400, crop: :fill %>');">
+  <div class="container">
+    <h1><strong><%= @cocktail.name %></strong></h1>
+  </div>
+</div>
 <div class="coitainer">
-  <h2><%= @cocktail.name %></h2>
-  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
   <br>
     <h5>Doses:</h5>
     <ul>
